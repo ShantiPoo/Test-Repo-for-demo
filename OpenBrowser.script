@@ -1,6 +1,6 @@
 ﻿params chrome //Pass in the browser, chrome or iexplore, you want to run against
 typetext windowskey,"r" //Open up the run window using a Windows shortcut
-waitfor 20, "RunWindowLogo"
+waitfor 30, "RunWindowLogo"
 typetext chrome
 typetext return
 return Pass
