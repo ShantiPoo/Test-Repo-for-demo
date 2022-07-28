@@ -1,0 +1,23 @@
+﻿WaitFor 60, "Message1"
+
+//initialise text to compare
+put "DURING FREE SPINS, ELEMENT" & return & "COINS MAY AWARD CREDIT" & return & "PRIZES, EXTRA SPINS & JACKPOT" into Text1
+
+put "UNCOVER 3 UPGRADE COINS" & return & "IN JACKPOT FEATURE TO" & return & "UPGRADE JACKPOT PRIZES!" into Text2
+
+put "SIX DIFFERENT FREE SPINS" & return & "GAMES WITH ADDED" & return & "WILDS!" into Text3
+
+//set displayText to ReadText(["Message_Flash1_A","Message_Flash1_B"])
+set displayText1 to ReadText({Image:"Message1_TL", WaitFor:52}, {Image:"NewJack_BR", WaitFor:117})
+log displayText1
+set displayText2 to ReadText({Image:"Message2_TL", WaitFor:113}, {Image:"Message2_BR", WaitFor:302})
+log displayText2
+set displayText3 to ReadText({Image:"Message3_TL", WaitFor:121}, {Image:"Message3_BR", WaitFor:94})
+log displayText3
+assert that Text1 is equal to displayText1 with error
+assert that Text2 is equal to displayText2 with error
+assert that Text3 is equal to displayText3 with error
+
+wait 10
+
+return Pass

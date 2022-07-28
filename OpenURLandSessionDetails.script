@@ -1,0 +1,42 @@
+﻿//params "//ogs-gcm-eu-dev.nyxop.net/gcm-lobby/launch.html"
+WaitFor 10, "ChromeURI"
+Click "ChromeURI"
+TypeText controlKey, "a"
+TypeText "//ogs-gcm-eu-dev.nyxop.net/gcm-lobby/launch.html"
+typetext return
+WaitFor 10, "Logo"
+click "SessionlD"
+TypeText controlKey, "a"
+TypeText "7af8f001-b2b9-4aeb-8bde-5ebc4a9a8f86"
+click "OGSGameID"
+TypeText controlKey, "a"
+TypeText 70638
+waitfor 10, "Mode_1"
+click "GameMode"
+click "Real"
+waitfor 10, "Desktop"
+click "CurrencyOption"
+waitfor 10, "ScrollUp"
+click "ScrollUp"
+click "ScrollUp"
+click "ScrollUp"
+click "ScrollUp"
+click "BritishPoundIGBP"
+click "Environment"
+click "2PPGeneric"
+click "LaunchGameBtn"
+
+return Pass
+
+
+
+
+
+
+
+
+
+(*waitfor 20, "RunWindowLogo"
+typetext MyBrowser
+typetext return
+return Pass*)

@@ -1,0 +1,3 @@
+﻿waitFor 10, "Browser_Close"
+click {Image:"Browser_Close", WaitFor:38}
+return Pass

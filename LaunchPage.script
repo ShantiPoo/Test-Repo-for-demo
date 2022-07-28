@@ -1,0 +1,133 @@
+﻿//launch browser
+OpenBrowser chrome
+// Open URL and update game details
+OpenURLandSessionDetails "//ogs-gcm-eu-dev.nyxop.net/gcm-lobby/launch.html"
+// validate main game page
+GameNotifications
+//close browser
+Close_Browser
+//Game Main page 
+(*
+waitfor 20, {Image:"Game_Title", WaitFor:199}
+wait 80
+waitfor 180, "Click_anywhere"
+click {Image:"Click_anywhere", WaitFor:38}
+WaitFor 20, "Setting_Btn"
+click {Image:"Setting_Btn", WaitFor:20}
+WaitFor 20, "Help_Btn"
+click {Image:"Help_Btn", WaitFor:38}
+WaitFor 20, "Noti1_Title"
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+waitfor 10, "Noti_2"
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//"Noti_Comp_Text1_TL", "Noti_Comp_Text1_BR"
+//initialise text to compare
+put "Only the highest winner paid per winning combination." & return & "REEL WAYS™ pays must occur on adjacent reek, beginning with the far-left reel." & return & "All wins on multiple ways are added together." & return & "Paytable reflects current bet configuration." & return & "The base game contains up to 243 ways to win." into Comp_Help_Notification_Text1
+
+
+WaitFor 10, "Help_Notification_Text1"
+set NotificationText1 to ReadText({Image:"Noti_Comp_Text1_TL", WaitFor:52}, {Image:"Noti_Comp_Text1_BR", WaitFor:117})
+log NotificationText1
+//compare text 
+assert that Comp_Help_Notification_Text1 is equal to NotificationText1 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+WaitFor 10, "Noti_3"
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+WaitFor 10, "Noti_4"
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "Only the highest winner paid per winning combination." & return & "REEL WAYS™ pays must occur on adjacent reek, beginning with the far-left reel." & return & "All wins on multiple ways are added together." & return & "Paytable reflects current bet configuration." & return & "Free Spins contains up to 243 ways to win." into Comp_Help_Notification_Text2
+
+WaitFor 10, "Help_Notification_Text2"
+set NotificationText2 to ReadText({Image:"Noti_Comp_Text1_TL", WaitFor:52}, {Image:"Noti_Comp_Text1_BR", WaitFor:117})
+log NotificationText2
+//compare text 
+assert that Comp_Help_Notification_Text2 is equal to NotificationText2 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "The MA symbol is wild and substitutes for all symbols except for the ELEMENT COIN symbols. In the base game, the symbol" & return & "appears on reel 3,4 and 5." & return & "In the base game, wilds are persistent and move up 1 reel position for subsequent spins." & return & "If a wild lands on an Element coin at the end of a spin that position becomes both a Wild and an element coin." & return & "In Free Soins, the svmbol aooears on reels 2.3.4 and 5." into Comp_Help_Notification_Text3
+
+waitFor 10, "Help_Notification_Text3"
+set NotificationText3 to ReadText({Image:"Noti_Comp_Text2_TL", WaitFor:52}, {Image:"Noti_Comp_Text2_BR", WaitFor:117})
+log NotificationText3 
+//compare text 
+assert that Comp_Help_Notification_Text3 is equal to NotificationText3 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "Each ELEMENT COIN that lands during the base game will fly into the corresponding coloured bowl. Any ELEMENT COIN may" & return & "trigger the corresponding bowl." & return & "More than one bowl can be triggered on a single spin" & return & "If bowl/s are triggered the corresponding feature will start." into Comp_Help_Notification_Text4
+
+waitfor 10, "Help_Notification_Text4"
+set NotificationText4 to ReadText({Image:"Noti_Comp_Text3_TL", WaitFor:52}, {Image:"Noti_Comp_Text3_BR", WaitFor:117}) 
+log NotificationText4
+//compare text 
+assert that Comp_Help_Notification_Text4 is equal to NotificationText4 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "The accumulation of ELEMENT COINS over time in the RED, GREEN and BLUE bowls has no effect on triggering the JACKPOT" & return & "PICK feature or Free Spins." into Comp_Help_Notification_Text5
+
+waitfor 10, {Image:"Help_Notification_Text5", WaitFor:97}
+set NotificationText5 to ReadText({Image:"Noti_Comp_Text4_TL", WaitFor:52}, {Image:"Noti_Comp_Text4_BR", WaitFor:117}) 
+log NotificationText5
+//compare text 
+assert that Comp_Help_Notification_Text5 is equal to NotificationText5 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "Any red ELEMENT COIN landing in the RED bowl may trigger the JACKPOT PICK feature." & return & "15 coins will be presented, coins are revealed by clicking on them. Coins will reveal FU BABY™ symbols or the UPGRADE symbol." & return & "Once 3 matching FU BABY™ symbols have been revealed, the corresponding JACKPOT is awarded." & return & "If 3 UPGRADE symbols are revealed before a JACKPOT is awarded, the JACKPOT won is upgraded to the next level. If Grand is" & return & "awarded, it will be awarded twice." & return & "The feature ends when one jackpot is awarded to the player." into Comp_Help_Notification_Text6
+
+
+waitfor 10, (Image:"Help_Notification_Text6", WaitFor:64)
+set NotificationText6 to ReadText({Image:"Noti_Comp_Text5_TL", WaitFor:52}, {Image:"Noti_Comp_Text5_BR", WaitFor:117}) 
+log NotificationText6
+//compare text 
+assert that Comp_Help_Notification_Text6 is equal to NotificationText6 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+waitfor 10, (Image:"Help_Notification_Text7", WaitFor:33)
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "ELEMENT COINS may also award the JACKPOT PICK feature." & return & "Only RED ELEMENT COINS are available in Free Spins." & return & "Free Spins will end when there are no Free Spins remaining." & return & "Free Spins will end if the maximum win has been achieved." into Comp_Help_Notification_Text8
+
+waitfor 10, (Image:"Help_Notification_Text8", WaitFor:80)
+set NotificationText7 to ReadText({Image:"Noti_Comp_Text6_TL", WaitFor:52}, {Image:"Noti_Comp_Text6_BR", WaitFor:117}) 
+log NotificationText7
+//compare text 
+assert that Comp_Help_Notification_Text8 is equal to NotificationText7 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "During the base reel game, the red mystery envelope bonus may be triggered at random." & return & "You will be shown a cash prize on top of the red envelope." & return & "The win from this bonus is £38.88 and is based on the current bet value." & return & "After the prize is awarded, the game will continue as normal." into Comp_Help_Notification_Text9
+
+waitfor 10, (Image:"Help_Notification_Text9", WaitFor:63)
+set NotificationText8 to ReadText({Image:"Noti_Comp_Text7_TL", WaitFor:52}, {Image:"Noti_Comp_Text7_BR", WaitFor:117}) 
+log NotificationText8
+//compare text 
+assert that Comp_Help_Notification_Text9 is equal to NotificationText8 with error
+
+click {Image:"Next_noti_Btn", WaitFor:8.6}
+//initialise text to compare
+put "Any combination of wins in a single game is limited and will not exceed £250,000.00. It may not be possible to reach this limit in" & return & "a single game from every bet configuration." & return & "In accordance with fair gaming practices, the outcome of each and every game is completely independent." & return & "The chances of getting a particular outcome are always the same at the start of every game." & return & "The expected return for this game is 96.36%. This reflects the theoretical return across many plays." & return & "Malfunction voids all pays and plays. Version: 1.4.02" & return & "The look and feel of the game and its individual components and displays are trade dress of Scientific Games Corp, and its"  & return & "Subsidiaries. TM and © 2021 Scientific Games Corp, and its Subsidiaries. All rights reserved."  into Comp_Help_Notification_Text10
+
+
+waitfor 10, (Image:"Help_Notification_Text10", WaitFor:67)
+set NotificationText9 to ReadText({Image:"Noti_Comp_Text8_TL", WaitFor:52}, {Image:"Noti_Comp_Text8_BR", WaitFor:117}) 
+log NotificationText9
+//compare text 
+assert that Comp_Help_Notification_Text10 is equal to NotificationText9 with error
+
+
+click "Close_Help_Btn"
+*)
+
+
+
+
+
+
+
+
+

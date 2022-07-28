@@ -1,0 +1,19 @@
+﻿params URL 
+WaitFor 10, "ChromeURI"
+Click "ChromeURI"
+TypeText controlKey, "a"
+TypeText URL
+typetext return
+
+//Enter details
+WaitFor 10, "Force_SessionID" 
+Click "Force_SessionID" 
+TypeText "7af8f001-b2b9-4aeb-8bde-5ebc4a9a8f86"
+WaitFor 10, "Force_GameServerName"
+Click "Force_GameServerName"
+TypeText "hurricanehorsecoincombo"
+WaitFor 10,"Force_Values"
+Click "Force_Values"
+TypeText "89;12;67;35;38;37;85;13;76;90;99;708961;649858;9170;725933;671797;27684;521260;446386;241978"
+WaitFor 10, "Force_Submit_Btn"
+Click "Force_Submit_Btn"

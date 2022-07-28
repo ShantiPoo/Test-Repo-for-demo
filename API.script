@@ -1,0 +1,30 @@
+﻿TypeText windowsKey,"r"
+WaitFor 10, "RunWindowLogo.png"
+TypeText "chrome"
+TypeText returnKey
+WaitFor 10, "ChromeURI"
+Click "Browser_URL_location"
+Typetext "https://reqres.in/"
+TypeText returnKey
+WaitFor 10, "request_logo"
+TypeText downArrow
+TypeText downArrow
+TypeText downArrow
+TypeText downArrow
+waitfor 10, "request_Url"
+Click "request_Url"
+if ImageFound("Url_result.png") 
+	LogSuccess "Actual Result maches with desired result "
+else
+	LogWarning "Actual Result does not mache with desired result"
+end if 
+
+TypeText altKey,F4
+
+
+
+
+
+
+
+

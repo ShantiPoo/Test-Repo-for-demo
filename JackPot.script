@@ -1,0 +1,138 @@
+﻿//launch browser
+OpenBrowser chrome
+//Launch URL and force game
+ForceTool "https://ogs-gdm-aws-2pp-int-generic-0.nyxaws.net/forcetool"
+// Launch game
+OpenURLandSessionDetails "//ogs-gcm-eu-dev.nyxop.net/gcm-lobby/launch.html"
+//JackPot game
+waitfor 20, {Image:"Game_Title", WaitFor:199}
+wait 180
+waitfor 180, "Click_anywhere"
+click {Image:"Click_anywhere", WaitFor:38}
+WaitFor 20, "Setting_Btn"
+WaitFor 10, {Image:"BALANCE", WaitFor:27}
+WaitFor 10, {Image:"Jackpot_Minor", WaitFor:154}
+WaitFor 10, {Image:"Jackpot_GRAND", WaitFor:47}
+WaitFor 10, "Jackpot_MAJOR"
+WaitFor 10, {Image:"Jackpot_MINI", WaitFor:370}
+WaitFor 10, {Image:"Jackpot_WIN", WaitFor:414}
+
+//Initiate the jackpot
+WaitFor 10, {Image:"JackPot_Ref_Btn", WaitFor:4.6}
+Click {Image:"JackPot_Ref_Btn", WaitFor:60}
+WaitFor 30, {Image:"JackPot_Symbol", WaitFor:30}
+Click {Image:"JackPot_Symbol", WaitFor:9.7}
+
+
+//Jackpot introduction text verification
+set IntroductionText1 to ReadText({Image:"Jackpot_Intro1_TL", WaitFor:75}, {Image:"Jackpot_intro1_BR", WaitFor:75})
+log IntroductionText1
+
+set IntroductionText2 to ReadText({Image:"Jackpot_Intro2_TL", WaitFor:75}, {Image:"Jackpot_Intro2_BR", WaitFor:75})
+log IntroductionText2
+
+set IntroductionText3 to ReadText({Image:"Jackpot_Intro3_TL", WaitFor:75}, {Image:"Jackpot_Intro3_BR", WaitFor:347})
+log IntroductionText3
+
+Click {Image:"Jackpot_CLICKTOSTART", WaitFor:347}
+
+// Verify jackpot panel text
+WaitFor 20, {Image:"Jackpot_panel_Text", WaitFor:11.4} 
+Waitfor 10, "Jackpot_Coin1"
+Click "Jackpot_Coin1"
+wait 20
+Waitfor 10, "Jackpot_Coin2"
+Click "Jackpot_Coin2"
+wait 20
+Waitfor 10, "Jackpot_Coin3"
+Click "Jackpot_Coin3"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if
+Waitfor 10, "Jackpot_Coin4"
+Click "Jackpot_Coin4"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if
+Waitfor 10, "Jackpot_Coin5"
+Click "Jackpot_Coin5"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if
+Waitfor 10, "Jackpot_Coin6"
+Click "Jackpot_Coin6"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin7"
+Click "Jackpot_Coin7"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin8"
+Click "Jackpot_Coin8"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin9"
+Click "Jackpot_Coin9"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin10"
+Click "Jackpot_Coin10"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin11"
+Click "Jackpot_Coin11"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin12"
+Click "Jackpot_Coin12"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "image00013"
+Click "image00013"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin14"
+Click "Jackpot_Coin14"
+wait 20
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+Waitfor 10, "Jackpot_Coin15"
+Click "Jackpot_Coin15"
+//Verify message
+if ImageFound("Congratulation") 
+	LogSuccess "Jackpot successfull"
+	Exit all
+end if 
+
